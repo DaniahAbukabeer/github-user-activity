@@ -12,10 +12,10 @@ github-activity <username>
 `
 2. Fetch the recent activity of the specified GitHub user using the GitHub API. You can use the following endpoint to fetch the user's activity:
 
-`in javascript
+` in javascript
 
-# https://api.github.com/users/<username>/events
-# Example: https://api.github.com/users/kamranahmedse/events
+ https://api.github.com/users/<username>/events
+ Example: https://api.github.com/users/kamranahmedse/events
 `
 3. Display the fetched activity in the terminal.
 `
