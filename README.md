@@ -21,7 +21,7 @@ github-activity <username>
 
 3. Display the fetched activity in the terminal.
 
-`
+```
 javascript
 
 Output:
@@ -29,8 +29,7 @@ Output:
 - Opened a new issue in kamranahmedse/developer-roadmap
 - Starred kamranahmedse/developer-roadmap
 - ...
-
-`
+```
 
 
 You can learn more about the [GitHub API](https://docs.github.com/en/rest/activity/events?apiVersion=2022-11-28) .
