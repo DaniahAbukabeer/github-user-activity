@@ -16,9 +16,9 @@ github-activity <username>
 
 
 ``` in javascript 
- https://api.github.com/users/<username>/events 
- Example:https://api.github.com/users/kamranahmedse/events ```
-
+ [https://api.github.com/users/<username>/events]
+ [Example:https://api.github.com/users/kamranahmedse/events] 
+```
 3. Display the fetched activity in the terminal.
 
 ```
