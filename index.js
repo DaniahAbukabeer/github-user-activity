@@ -80,7 +80,7 @@ const zeatwzatarWasHere = `
  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ < 
  `;
 
- 
+
 const toast = `
                         &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
                         &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&$Xx;X:.+xxx&X;++;;:..:;+;:.....:.::x::..:x;+;+
@@ -140,28 +140,37 @@ const toast = `
 `;
 console.log(zeatwzatar)
 
-console.log(toast);
+// console.log(toast);
 
 // console.warn('#                   _   _       _            _                \n#                  ( )_( )  _  ( )          ( )_              \n#  ____   __    _ _| ,_| | ( ) | |____   _ _| ,_)  _ _ _ __   \n# (_  ,)/\'__`\/\'_\` | | | | | | | (_  ,)/\'_` | |  /\'_` ( \'__)   \n#  /\'/_(  ___( (_| | |_| (_/ \_) |/\'/_( (_| | |_( (_| | |     \n# (____`\____`\__,_`\__`\___x___/(____`\__,_`\__`\__,_(_)     \n#                           _                                 \n#                          ( )                                \n#  _   _   _   _ _  ___    | |__    __  _ __  __              \n# ( ) ( ) ( )/\'_` /\',__)   |  _ `\/\'__`( \'__/\'__`\            \n# | \_/ \_/ ( (_| \__, \   | | | (  ___| | (  ___/            \n# `\___x___/`\__,_(____/   (_) (_`\____(_) `\____)            ');
 
-console.log(`      ::::::::: ::::::::::     ::: ::::::::::: :::       ::: :::::::::     ::: ::::::::::: :::     :::::::::    
-          :+:  :+:          :+: :+:   :+:     :+:       :+:      :+:    :+: :+:   :+:   :+: :+:   :+:    :+:    
-        +:+   +:+         +:+   +:+  +:+     +:+       +:+     +:+    +:+   +:+  +:+  +:+   +:+  +:+    +:+     
-      +#+    +#++:++#   +#++:++#++: +#+     +#+  +:+  +#+    +#+    +#++:++#++: +#+ +#++:++#++: +#++:++#:       
-    +#+     +#+        +#+     +#+ +#+     +#+ +#+#+ +#+   +#+     +#+     +#+ +#+ +#+     +#+ +#+    +#+       
-  #+#      #+#        #+#     #+# #+#      #+#+# #+#+#   #+#      #+#     #+# #+# #+#     #+# #+#    #+#        
-######### ########## ###     ### ###       ###   ###   ######### ###     ### ### ###     ### ###    ###         
-    :::       :::     :::      ::::::::           :::    ::: :::::::::: :::::::::  ::::::::::                   
-   :+:       :+:   :+: :+:   :+:    :+:          :+:    :+: :+:        :+:    :+: :+:                           
-  +:+       +:+  +:+   +:+  +:+                 +:+    +:+ +:+        +:+    +:+ +:+                            
- +#+  +:+  +#+ +#++:++#++: +#++:++#++          +#++:++#++ +#++:++#   +#++:++#:  +#++:++#                        
-+#+ +#+#+ +#+ +#+     +#+        +#+          +#+    +#+ +#+        +#+    +#+ +#+                              
-#+#+# #+#+#  #+#     #+# #+#    #+#          #+#    #+# #+#        #+#    #+# #+#                               
-###   ###   ###     ###  ########           ###    ### ########## ###    ### ##########                         `);
-console.log(`
-`);
+// console.log(`      ::::::::: ::::::::::     ::: ::::::::::: :::       ::: :::::::::     ::: ::::::::::: :::     :::::::::    
+//           :+:  :+:          :+: :+:   :+:     :+:       :+:      :+:    :+: :+:   :+:   :+: :+:   :+:    :+:    
+//         +:+   +:+         +:+   +:+  +:+     +:+       +:+     +:+    +:+   +:+  +:+  +:+   +:+  +:+    +:+     
+//       +#+    +#++:++#   +#++:++#++: +#+     +#+  +:+  +#+    +#+    +#++:++#++: +#+ +#++:++#++: +#++:++#:       
+//     +#+     +#+        +#+     +#+ +#+     +#+ +#+#+ +#+   +#+     +#+     +#+ +#+ +#+     +#+ +#+    +#+       
+//   #+#      #+#        #+#     #+# #+#      #+#+# #+#+#   #+#      #+#     #+# #+# #+#     #+# #+#    #+#        
+// ######### ########## ###     ### ###       ###   ###   ######### ###     ### ### ###     ### ###    ###         
+//     :::       :::     :::      ::::::::           :::    ::: :::::::::: :::::::::  ::::::::::                   
+//    :+:       :+:   :+: :+:   :+:    :+:          :+:    :+: :+:        :+:    :+: :+:                           
+//   +:+       +:+  +:+   +:+  +:+                 +:+    +:+ +:+        +:+    +:+ +:+                            
+//  +#+  +:+  +#+ +#++:++#++: +#++:++#++          +#++:++#++ +#++:++#   +#++:++#:  +#++:++#                        
+// +#+ +#+#+ +#+ +#+     +#+        +#+          +#+    +#+ +#+        +#+    +#+ +#+                              
+// #+#+# #+#+#  #+#     #+# #+#    #+#          #+#    #+# #+#        #+#    #+# #+#                               
+// ###   ###   ###     ###  ########           ###    ### ########## ###    ### ##########                         `);
+// console.log(`
+// `);
 
 const readline = require('node:readline/promises');
+var asciify = require('asciify-image');
+
+
+var options = {
+    fit: 'box',
+    width: 35,
+    height: 35,
+    color: false
+}
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -174,14 +183,13 @@ const fetchUserData = async () => {
     console.log('hehe');
     try {
         const response = await fetch(`https://api.github.com/users/${username}/events`);
+        const data = await response.json();
         // console.log('the api response', response);
+        // console.log('the api data', data);
         if (!response.ok) {
             throw new Error('http request failedddd', response.status);
         } else {
-            console.log(`OUTPUT`);
-            console.log(`-PUSHED `, response.length(), `commits to`);
-
-            // return response;
+            return data;
         }
     } catch (err) {
         console.error('an issue happened with the network sorry buddy', err);
@@ -189,6 +197,35 @@ const fetchUserData = async () => {
 }
 
 
-const userGithubData = fetchUserData();
+fetchUserData().then(
+    data => {
+        // console.log('the data after fetching is', data);
+        const usersAvatar = data[0]?.actor?.avatar_url || './applee.png';
+        console.log(`Hellooo there ${data[0].actor.display_login}`)
+        asciify(usersAvatar, options)
+            .then(function (asciified) {
+                // Print asciified image to console
+                console.log(asciified);
+            })
+            .catch(function (err) {
+                // Print error to console
+                console.error(err);
+            });
+        var commits = 0;
+        const repos = [];
+        data?.forEach(event => {
+            if(event?.type === 'PushEvent')
+            {
+                commits++;
+                // TODO push only if uniqe
+                repos.push(event.repo.name);
+            }
+        });
+        console.log('commits counter', commits);
+        console.log('on the following repos', repos);
+    }
+)
+
+// console.log('fetched data', fetchUserData);
 
 // console.log(userGithubData);
