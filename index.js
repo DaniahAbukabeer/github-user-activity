@@ -178,10 +178,10 @@ const rl = readline.createInterface({
 });
 
 const fetchUserData = async () => {
-    const username = await rl.question(`What's your github username?\n`);
-    rl.close();
-    console.log('hehe');
     try {
+        const username = await rl.question(`What's your github username?\n`);
+        rl.close();
+        // console.log('hehe');
         const response = await fetch(`https://api.github.com/users/${username}/events`);
         const data = await response.json();
         // console.log('the api response', response);
@@ -192,39 +192,68 @@ const fetchUserData = async () => {
             return data;
         }
     } catch (err) {
-        console.error('an issue happened with the network sorry buddy', err);
+        console.error('check ur github username for typos... ', err);
     }
 }
 
 
-fetchUserData().then(
-    data => {
-        // console.log('the data after fetching is', data);
-        const usersAvatar = data[0]?.actor?.avatar_url || './applee.png';
-        console.log(`Hellooo there ${data[0].actor.display_login}`)
-        asciify(usersAvatar, options)
-            .then(function (asciified) {
-                // Print asciified image to console
-                console.log(asciified);
-            })
-            .catch(function (err) {
-                // Print error to console
-                console.error(err);
-            });
-        var commits = 0;
-        const repos = [];
-        data?.forEach(event => {
-            if(event?.type === 'PushEvent')
-            {
-                commits++;
-                // TODO push only if uniqe
-                repos.push(event.repo.name);
+fetchUserData()
+    .then(
+        data => {
+            // console.log('the data after fetching is', data);
+            try {
+                const usersAvatar = data[0]?.actor?.avatar_url ? data[0]?.actor?.avatar_url : './applee.png';
+                console.log(`Hellooo there ${data[0].actor.display_login}`)
+                asciify(usersAvatar, options)
+                    .then(function (asciified) {
+                        console.log(asciified);
+                    })
+                    .catch(function (err) {
+                        console.error(err);
+                    });
+
+                var commits = 0;
+                const repos = [];
+                var issues = 0;
+                const issuesRepos = [];
+                data?.forEach(event => {
+                    if (event?.type === 'PushEvent') {
+                        commits++;
+                        // TODO push only if uniqe
+                        if (!repos.includes(event.repo.name)) {
+                            repos.push(event.repo.name);
+                            // console.log('new repo added');
+                        }
+                        // else {
+                        //     console.log('repo name already added');
+                        // }
+
+                    }
+                    if (event?.type === 'IssueEvent') {
+                        issues++;
+                        if (!issuesRepos.includes(event.repo.name))
+                            issuesRepos.push(event.repo.name);
+                    }
+                });
+                console.log(`${commits} commits made  on the following repos ${repos}`);
+                if (issues === 0) {
+                    console.log('no issues have been opened lately :)');
+                } else {
+                    console.log(`${issues} issues opened on the following repos ${issuesRepos}`);
+                }
+
+                // console.log('on the following repos', repos);
+
             }
-        });
-        console.log('commits counter', commits);
-        console.log('on the following repos', repos);
-    }
-)
+            catch (err) {
+                console.error(err) || console.log('check the github username for typos');
+            }
+
+        }
+    )
+    .catch(err => {
+        console.log('the fetching failed gurl...', err);
+    });
 
 // console.log('fetched data', fetchUserData);
 
